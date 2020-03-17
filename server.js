@@ -9,6 +9,10 @@ const helmet = require('helmet');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+// Rutas
+// Cargamos las rutas de nuestros usuarios
+const usersRoutes = require('./src/api/routes/users');
+
 // Cargamos las variables de entorno
 dotenv.config();
 
@@ -48,8 +52,8 @@ app.use(
   }),
 );
 
-// Hola mundo en express
-app.use('/api/v1', (_, res) => res.status(200).json({ hola: 'mundo' }));
+// Agregamos la ruta de users a nuestra API
+app.use('/api/v1/users', usersRoutes);
 
 // Configuración de la base de datos
 mongoose.set('useCreateIndex', true);
