@@ -8,4 +8,7 @@ const usersController = require('../controllers/users');
 // podremos registrar a nuestro usuario
 router.post('/signup', usersController.signup);
 
+// Inicio de sesión de usuarios
+router.post('/login', usersController.login);
+
 module.exports = router;
