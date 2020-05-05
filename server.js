@@ -1,6 +1,5 @@
 // Importación de módulos
 const express = require('express');
-const bodyParser = require('body-parser');
 const winston = require('winston');
 const expressWinston = require('express-winston');
 const http = require('http');
@@ -24,9 +23,9 @@ const app = express();
 
 // Middlewares
 // Habilito el parseo de las peticiones en json
-app.use(bodyParser.json());
+app.use(express.json());
 // Habilito el parseo de x-url-encoded-form de manera extendida
-app.use(bodyParser.urlencoded({ enxtended: true }));
+app.use(express.urlencoded({ enxtended: true }));
 
 // Protección de cabeceras
 app.use(helmet());
