@@ -25,7 +25,7 @@ const app = express();
 // Habilito el parseo de las peticiones en json
 app.use(express.json());
 // Habilito el parseo de x-url-encoded-form de manera extendida
-app.use(express.urlencoded({ enxtended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 // Protección de cabeceras
 app.use(helmet());
